@@ -1,4 +1,9 @@
 {
   "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 4000
+  "files.autoSaveDelay": 4000,
+  "emmet.excludeLanguages": [
+    "markdown",
+    "javascript",
+    "javascriptreact"
+  ]
 }
