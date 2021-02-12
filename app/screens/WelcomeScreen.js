@@ -1,9 +1,15 @@
 import React from 'react';
 import { Button, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { v4 as uuid } from 'uuid';
+import { AppButton } from '../components/AppButton';
 import colors from '../config/colors';
 function WelcomeScreen(props) {
+  const handlePress = () => {
+    console.warn("Hola")
+  }
   return (
     <ImageBackground
+      blurRadius={3}
       style={styles.background}
       source={require("../assets/background.jpg")}
     >
@@ -11,11 +17,9 @@ function WelcomeScreen(props) {
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text>Sell What You Don't Need!</Text>
       </View>
-      <View style={styles.loginButton}>
-        <Text style={styles.buttonText}>Login</Text>
-      </View>
-      <View style={styles.registerButton}>
-        <Text style={styles.buttonText}>Register</Text>
+      <View style={styles.buttonsContainer}>
+        <AppButton key={uuid()} title="Login" onPress={handlePress} />
+        <AppButton key={uuid()} title="Register" bgColor="secondary" onPress={handlePress} />
       </View>
     </ImageBackground>
   );
@@ -32,19 +36,12 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: "#eee"
   },
-  loginButton: {
+  buttonsContainer: {
     width: "100%",
-    height: 70,
-    backgroundColor: colors.primary,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors.secondary,
-    justifyContent: "center",
-    alignItems: "center"
+    padding: 20,
+    justifyContent: "space-between",
+    position: "absolute",
+    bottom: 0
   },
   logo: {
     width: 100,

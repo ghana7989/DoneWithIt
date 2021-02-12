@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
+import colors from '../../config/colors';
 
 
-function AppButton({ title, onPress }) {
+function AppButton({ title, onPress, bgColor = "primary" }) {
   return (
     <TouchableOpacity
-      style={styles.button}
+      style={[styles.button, { backgroundColor: colors[bgColor] }]}
       onPress={onPress}
     >
       <Text
@@ -19,7 +20,8 @@ function AppButton({ title, onPress }) {
 
 AppButton.propTypes = {
   title: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired,
+  bgColor: PropTypes.oneOf["primary", "secondary", "black", "white"]
 }
 
 export default AppButton;

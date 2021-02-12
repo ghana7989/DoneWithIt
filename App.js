@@ -6,25 +6,17 @@ import { AppButton } from './app/components/AppButton';
 import { AppText } from './app/components/AppText';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
+import { Card } from './app/components/Card';
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 
 export default function App() {
   console.log("App executed");
 
   return (
-    // {/* <WelcomeScreen /> */}
-    // {/* <ViewImageScreen /> */}
-    <View style={{
-      flex: 1,
-      alignItems: "center",
-      justifyContent: "center",
-
-    }}>
-
-      <AppText>
-        I Love React Native
-      </AppText>
-      <AppButton key={uuid()} title="Get The Fuck OFF" onPress={() => console.warn("Tapped")} />
-    </View>
+    // <WelcomeScreen />
+    <ViewImageScreen />
+    // <Card title="Red Leather Jacket" subTitle="$50" image="" />
+    // <ListingDetailsScreen />
   );
 }
 
