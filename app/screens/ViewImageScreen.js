@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from '../config/colors';
 
-function ViewImageScreen(props) {
+function ViewImageScreen() {
   return (
     <View
       style={styles.container}
