@@ -12,6 +12,7 @@ const listItemStyles = StyleSheet.create({
   listContainer: {
     flexDirection: "row",
     alignItems: "flex-start",
+    padding: 15
   },
   title: {
     fontWeight: "500",
