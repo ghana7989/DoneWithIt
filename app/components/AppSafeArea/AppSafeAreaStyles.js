@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native'
 
 const AppSafeAreaStyles = StyleSheet.create({
   safeAreaContainer: {
-    paddingTop: Constants.statusBarHeight
+    paddingTop: Constants.statusBarHeight,
+    flex: 1
   }
 })
 

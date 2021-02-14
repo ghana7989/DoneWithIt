@@ -9,6 +9,8 @@ import WelcomeScreen from './app/screens/WelcomeScreen';
 import { Card } from './app/components/Card';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
+import AppSafeAreaView from './app/components/AppSafeArea';
+import { Icon } from './app/components/Icon';
 
 export default function App() {
   console.log("App executed");
@@ -16,10 +18,14 @@ export default function App() {
   return (
     // <WelcomeScreen />
     // <ViewImageScreen />
-    <MessagesScreen />
+    // <MessagesScreen />
     // <Card title="Red Leather Jacket" subTitle="$50" image="" />
     // <ListingDetailsScreen />
+    <AppSafeAreaView>
+      <Icon name="email" iconColor="white" size={50} backgroundColor="red" />
+    </AppSafeAreaView>
   );
+
 }
 
 const styles = StyleSheet.create({
