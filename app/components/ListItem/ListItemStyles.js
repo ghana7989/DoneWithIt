@@ -1,18 +1,24 @@
 import colors from '../../config/colors';
 
-const { StyleSheet } = require('react-native');
+const { StyleSheet, Platform } = require('react-native');
+
+const WIDTH_AND_HEIGHT = Platform.OS = "android" ? 60 : 70
 
 const listItemStyles = StyleSheet.create({
   image: {
-    width: 70,
-    height: 70,
+    width: WIDTH_AND_HEIGHT,
+    height: WIDTH_AND_HEIGHT,
     borderRadius: 35,
-    marginRight: 10,
   },
   listContainer: {
     flexDirection: "row",
     alignItems: "flex-start",
-    padding: 15
+    padding: 15,
+    backgroundColor: colors.white
+  },
+  detailsContainer: {
+    marginLeft: 10,
+    justifyContent: "center"
   },
   title: {
     fontWeight: "500",

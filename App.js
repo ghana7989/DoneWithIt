@@ -11,6 +11,9 @@ import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
 import AppSafeAreaView from './app/components/AppSafeArea';
 import { Icon } from './app/components/Icon';
+import { ListItem } from './app/components/ListItem';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 
 export default function App() {
   console.log("App executed");
@@ -21,9 +24,9 @@ export default function App() {
     // <MessagesScreen />
     // <Card title="Red Leather Jacket" subTitle="$50" image="" />
     // <ListingDetailsScreen />
-    <AppSafeAreaView>
-      <Icon name="email" iconColor="white" size={50} backgroundColor="red" />
-    </AppSafeAreaView>
+    // <AccountScreen />
+    <ListingsScreen />
+
   );
 
 }

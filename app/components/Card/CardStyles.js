@@ -4,8 +4,8 @@ import colors from '../../config/colors';
 
 const CardStyles = StyleSheet.create({
   card: {
-    marginTop: 100,
-    backgroundColor: colors.black,
+    marginTop: 20,
+    backgroundColor: colors.white,
     borderRadius: 15,
     overflow: "hidden"
   },

@@ -7,8 +7,7 @@ import { AppText } from '../AppText';
 import listItemStyles from './ListItemStyles';
 import colors from '../../config/colors';
 
-function ListItem({ title, subTitle, image, onPress, renderRightActions }) {
-  const imageSource = image ? image : { uri: "https://source.unsplash.com/random" }
+function ListItem({ title, subTitle, image, IconComponent, onPress, renderRightActions }) {
   return (
     <Swipeable
       renderRightActions={renderRightActions}
@@ -18,10 +17,11 @@ function ListItem({ title, subTitle, image, onPress, renderRightActions }) {
         onPress={onPress}
       >
         <View style={listItemStyles.listContainer}>
-          <Image style={listItemStyles.image} source={imageSource} />
-          <View >
+          {IconComponent}
+          {image && <Image style={listItemStyles.image} source={image} />}
+          <View style={listItemStyles.detailsContainer}>
             <AppText style={listItemStyles.title}>{title}</AppText>
-            <AppText style={listItemStyles.subTitle}>{subTitle}</AppText>
+            {subTitle && <AppText style={listItemStyles.subTitle}>{subTitle}</AppText>}
           </View>
         </View>
       </TouchableHighlight>
@@ -31,9 +31,10 @@ function ListItem({ title, subTitle, image, onPress, renderRightActions }) {
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
   image: PropTypes.object,
   onPress: PropTypes.func.isRequired,
+  IconComponent: PropTypes.element
 }
 
 export default ListItem;

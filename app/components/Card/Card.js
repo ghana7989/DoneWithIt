@@ -7,7 +7,7 @@ import { AppText } from '../AppText';
 function Card({ title, subTitle, image }) {
   return (
     <View style={CardStyles.card}>
-      <Image source={{ uri: "https://picsum.photos/300/200" }} style={CardStyles.image} />
+      <Image source={image} style={CardStyles.image} />
       <View style={CardStyles.detailsContainer}>
         <AppText style={CardStyles.title}>{title}</AppText>
         <AppText style={CardStyles.subTitle}>{subTitle}</AppText>
