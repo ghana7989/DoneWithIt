@@ -1,21 +1,14 @@
-const { StyleSheet, Platform } = require('react-native')
+import { TEXT } from '../../config/styles'
 
-const platformDependantStyles = Platform.select({
-  ios: {
-    fontSize: 20,
-    fontFamily: "Avenir"
-  },
-  android: {
-    fontSize: 18,
-    fontFamily: "Roboto"
-  },
-})
+const { StyleSheet } = require('react-native')
+
+
 
 
 const styles = StyleSheet.create({
   text: {
     color: "tomato",
-    ...platformDependantStyles
+    ...TEXT
   }
 })
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Platform, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import AppSafeAreaView from '../components/AppSafeArea';
 import { Icon } from '../components/Icon';
 import { ListItem } from '../components/ListItem';

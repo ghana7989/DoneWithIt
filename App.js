@@ -1,36 +1,47 @@
-import React from "react";
-import 'react-native-get-random-values';
-import { v4 as uuid } from 'uuid';
-import { StyleSheet, Text, View } from "react-native";
-import { AppButton } from './app/components/AppButton';
-import { AppText } from './app/components/AppText';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import { Card } from './app/components/Card';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
+import React, { useState } from "react";
+import { AppPicker } from './app/components/AppPicker';
 import AppSafeAreaView from './app/components/AppSafeArea';
-import { Icon } from './app/components/Icon';
-import { ListItem } from './app/components/ListItem';
-import AccountScreen from './app/screens/AccountScreen';
-import ListingsScreen from './app/screens/ListingsScreen';
+import { AppTextInput } from './app/components/AppTextInput';
 
+const categories = [
+  {
+    label: "Furniture",
+    value: 1
+  },
+  {
+    label: "clothing",
+    value: 5
+  },
+  {
+    label: "Phones",
+    value: 145
+  },
+  {
+    label: "Cameras",
+    value: 5011
+  },
+  {
+    label: "Dogs",
+    value: 78
+  },
+]
 export default function App() {
   console.log("App executed");
-
+  const [category, setCategory] = useState(undefined);
   return (
-    // <WelcomeScreen />
-    // <ViewImageScreen />
-    // <MessagesScreen />
-    // <Card title="Red Leather Jacket" subTitle="$50" image="" />
-    // <ListingDetailsScreen />
-    // <AccountScreen />
-    <ListingsScreen />
+
+    <AppSafeAreaView>
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={item => setCategory(item)}
+        icon="apps"
+        placeholder="Category"
+        items={categories} />
+      <AppTextInput icon="email" placeholder="Email" />
+    </AppSafeAreaView>
 
   );
 
 }
 
-const styles = StyleSheet.create({
 
-});
