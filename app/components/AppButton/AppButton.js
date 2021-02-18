@@ -21,7 +21,6 @@ function AppButton({ title, onPress, bgColor = "primary" }) {
 AppButton.propTypes = {
   title: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-  bgColor: PropTypes.oneOf["primary", "secondary", "black", "white"]
 }
 
 export default AppButton;
