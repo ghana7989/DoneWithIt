@@ -1,22 +1,30 @@
 {
-	"expo": {
-		"name": "DoneWithIt",
-		"slug": "DoneWithIt",
-		"platforms": ["ios", "android", "web"],
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./app/assets/icon.png",
-		"splash": {
-			"image": "./app/assets/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		}
-	}
+  "expo": {
+    "name": "DoneWithIt",
+    "slug": "DoneWithIt",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/icon.png",
+    "splash": {
+      "image": "./app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "description": "A Place Where One can sell what they don't want",
+    "githubUrl": "https://github.com/ghana7989/DoneWithIt"
+  }
 }
