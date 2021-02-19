@@ -1,7 +1,8 @@
 import React from 'react';
 import { Image, TouchableHighlight, View } from 'react-native';
 import PropTypes from 'prop-types';
-import Swipeable from "react-native-gesture-handler/Swipeable"
+import Swipeable from "react-native-gesture-handler/Swipeable";
+import { MaterialCommunityIcons } from "@expo/vector-icons"
 
 import { AppText } from '../AppText';
 import listItemStyles from './ListItemStyles';
@@ -20,9 +21,10 @@ function ListItem({ title, subTitle, image, IconComponent, onPress, renderRightA
           {IconComponent}
           {image && <Image style={listItemStyles.image} source={image} />}
           <View style={listItemStyles.detailsContainer}>
-            <AppText style={listItemStyles.title}>{title}</AppText>
-            {subTitle && <AppText style={listItemStyles.subTitle}>{subTitle}</AppText>}
+            <AppText style={listItemStyles.title} numberOfLines={1}>{title}</AppText>
+            {subTitle && <AppText style={listItemStyles.subTitle} numberOfLines={3}>{subTitle}</AppText>}
           </View>
+          <MaterialCommunityIcons style={listItemStyles.icon} name="chevron-right" size={25} />
         </View>
       </TouchableHighlight>
     </Swipeable>

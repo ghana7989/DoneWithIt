@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { AppForm, AppFormField, AppFormPicker } from './app/components/AppForm';
+import AppSafeAreaView from './app/components/AppSafeArea';
 import ListingEditingScreen from './app/screens/ListingEditScreen';
 
 
 export default function App() {
-  console.log("App executed");
+
   return (
-    <ListingEditingScreen />
+    <AppSafeAreaView>
+      <ListingEditingScreen />
+    </AppSafeAreaView>
   );
 
 }

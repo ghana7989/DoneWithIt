@@ -3,6 +3,7 @@ import AppSafeAreaView from '../components/AppSafeArea';
 import { Image, StyleSheet } from 'react-native';
 import * as Yup from "yup";
 import { AppForm, AppFormField, AppFormPicker, AppSubmitButton } from '../components/AppForm';
+import { AppCategoryPicker } from '../components/AppPicker';
 
 
 const validationSchema = Yup.object().shape({
@@ -12,9 +13,9 @@ const validationSchema = Yup.object().shape({
   category: Yup.object().required().nullable().label("Category"),
 })
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
+  { label: "Furniture", value: 1, backgroundColor: "red", icon: "apps" },
+  { label: "Clothing", value: 2, backgroundColor: "green", icon: "email" },
+  { label: "Camera", value: 3, backgroundColor: "blue", icon: "lock" },
 ];
 function ListingEditingScreen() {
   return (
@@ -35,11 +36,14 @@ function ListingEditingScreen() {
           maxLength={8}
           name="price"
           placeholder="Price"
+          width={130}
         />
         <AppFormPicker
           items={categories}
           name="category"
           placeholder="Category"
+          PickerItemComponent={AppCategoryPicker}
+          numberOfColumns={3}
         />
         <AppFormField
           placeholder="Description"

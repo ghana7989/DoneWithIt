@@ -18,7 +18,7 @@ const listItemStyles = StyleSheet.create({
   },
   detailsContainer: {
     marginLeft: 10,
-    justifyContent: "center"
+    flex: 1
   },
   title: {
     fontWeight: "500",
@@ -27,6 +27,10 @@ const listItemStyles = StyleSheet.create({
   subTitle: {
     color: colors.grey,
     top: 5
+  },
+  icon: {
+    alignSelf: "center",
+    color: colors.grey
   }
 })
 
