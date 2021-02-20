@@ -1,14 +1,23 @@
-import React, { useState } from "react";
-import { AppForm, AppFormField, AppFormPicker } from './app/components/AppForm';
+import React, { useEffect, useState } from "react";
 import AppSafeAreaView from './app/components/AppSafeArea';
-import ListingEditingScreen from './app/screens/ListingEditScreen';
-
+import { ImageInputList } from './app/components/ImageInput';
 
 export default function App() {
 
+  const [uris, setUris] = useState([]);
+  const handleAdd = uri => {
+    setUris([...uris, uri])
+  }
+  const handleRemove = uri => {
+    setUris(uris.filter(imageUri => imageUri !== uri))
+  }
   return (
     <AppSafeAreaView>
-      <ListingEditingScreen />
+      <ImageInputList
+        imageUris={uris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      />
     </AppSafeAreaView>
   );
 
